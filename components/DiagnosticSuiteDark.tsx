@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Sparkles,
-  Activity,
-  Scan,
-  Brain,
-  Bone,
-  Zap,
-  ChevronRight,
-  Sliders,
-  CheckCircle2,
-} from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 export function DiagnosticSuiteDark() {
   // Cardiovascular XGBoost Calculator State
@@ -48,7 +38,7 @@ export function DiagnosticSuiteDark() {
             className="inline-flex items-center gap-2 bg-[#F4E071] hover:bg-[#E8C838] text-[#1C1B18] px-6 py-3 rounded-full text-xs font-bold uppercase tracking-wider transition-all self-start md:self-end"
           >
             <span>EXPLORE DIAGNOSTICS</span>
-            <ChevronRight className="w-4 h-4" />
+            <MaterialIcon name="chevron_right" className="text-base text-[#1C1B18]" />
           </a>
         </div>
 
@@ -62,7 +52,7 @@ export function DiagnosticSuiteDark() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-[#33312B] text-[#F4E071] px-3 py-1 rounded-full border border-[#474439]">
                   YOLOv11 & TorchXRayVision
                 </span>
-                <Scan className="w-5 h-5 text-[#F4E071]" />
+                <MaterialIcon name="document_scanner" className="text-xl text-[#F4E071]" />
               </div>
 
               <h3 className="font-serif text-2xl font-bold text-white tracking-tight">
@@ -82,7 +72,7 @@ export function DiagnosticSuiteDark() {
                     </span>
                   </div>
                 </div>
-                <span className="absolute bottom-2 left-2 text-[9px] text-[#8C8778]">
+                <span className="absolute bottom-2 left-2 text-[9px] text-[#8C8878]">
                   Heatmaps & Bounding Box Localization
                 </span>
               </div>
@@ -101,7 +91,7 @@ export function DiagnosticSuiteDark() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-[#33312B] text-[#7BB1D1] px-3 py-1 rounded-full border border-[#474439]">
                   Universal Radiograph Vision
                 </span>
-                <Bone className="w-5 h-5 text-[#7BB1D1]" />
+                <MaterialIcon name="skeleton" className="text-xl text-[#7BB1D1]" />
               </div>
 
               <h3 className="font-serif text-2xl font-bold text-white tracking-tight">
@@ -137,7 +127,7 @@ export function DiagnosticSuiteDark() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-[#33312B] text-[#4EBD88] px-3 py-1 rounded-full border border-[#474439]">
                   XGBoost ML Engine
                 </span>
-                <Activity className="w-5 h-5 text-[#4EBD88]" />
+                <MaterialIcon name="vital_signs" className="text-xl text-[#4EBD88]" />
               </div>
 
               <h3 className="font-serif text-2xl font-bold text-white tracking-tight">
@@ -201,7 +191,7 @@ export function DiagnosticSuiteDark() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-[#33312B] text-[#E67CAE] px-3 py-1 rounded-full border border-[#474439]">
                   MRI Volumetric AI
                 </span>
-                <Brain className="w-5 h-5 text-[#E67CAE]" />
+                <MaterialIcon name="psychology" className="text-xl text-[#E67CAE]" />
               </div>
 
               <h3 className="font-serif text-2xl font-bold text-white tracking-tight">
@@ -237,7 +227,7 @@ export function DiagnosticSuiteDark() {
                 <span className="text-[10px] font-bold uppercase tracking-wider bg-[#33312B] text-[#F4E071] px-3 py-1 rounded-full border border-[#474439]">
                   Smartphone & Dermatoscope Vision
                 </span>
-                <Zap className="w-5 h-5 text-[#F4E071]" />
+                <MaterialIcon name="bolt" className="text-xl text-[#F4E071]" />
               </div>
 
               <h3 className="font-serif text-2xl sm:text-3xl font-bold text-white tracking-tight">
@@ -266,7 +256,7 @@ export function DiagnosticSuiteDark() {
 
             <div className="pt-4 border-t border-[#3A3831] flex items-center justify-between text-xs text-[#8C8778]">
               <span className="flex items-center gap-1.5 text-white">
-                <CheckCircle2 className="w-4 h-4 text-[#4EBD88]" />
+                <MaterialIcon name="check_circle" className="text-base text-[#4EBD88]" />
                 Clinically Validated Classification System
               </span>
               <a
@@ -274,7 +264,7 @@ export function DiagnosticSuiteDark() {
                 className="text-[#F4E071] font-bold hover:underline flex items-center gap-1"
               >
                 <span>TEST CLASSIFIER</span>
-                <ChevronRight className="w-3.5 h-3.5" />
+                <MaterialIcon name="chevron_right" className="text-sm text-[#F4E071]" />
               </a>
             </div>
           </div>

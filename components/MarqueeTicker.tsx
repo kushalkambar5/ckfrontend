@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Sparkles } from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const features = [
   "AI Medical Chatbot & RAG",
@@ -26,7 +26,7 @@ export function MarqueeTicker() {
               <span className="font-serif text-lg sm:text-xl font-medium tracking-wide text-[#38352E] group-hover:text-[#8C6B1F] transition-colors">
                 {item}
               </span>
-              <Sparkles className="w-4 h-4 text-[#C49A24]" />
+              <MaterialIcon name="auto_awesome" className="text-base text-[#C49A24]" />
             </div>
           ))}
         </div>

@@ -1,28 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  MessageSquare,
-  Stethoscope,
-  Watch,
-  Eye,
-  Send,
-  Mic,
-  Upload,
-  Bot,
-  UserCheck,
-  CheckCircle2,
-  Activity,
-  Heart,
-  Moon,
-  Flame,
-  Footprints,
-  Sparkles,
-  Edit3,
-  Check,
-  RotateCcw,
-  Zap,
-} from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 export function InteractiveFeatureShowcase() {
   const [activeTab, setActiveTab] = useState<"chatbot" | "doctor" | "smartwatch" | "anatomy">("chatbot");
@@ -118,10 +97,6 @@ export function InteractiveFeatureShowcase() {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
-        <div className="inline-flex items-center gap-2 bg-[#FAF6E8] border border-[#E8DAA8] px-4 py-1.5 rounded-full text-xs font-semibold text-[#8C6B1F]">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>INTERACTIVE PLATFORM DEMO</span>
-        </div>
         <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#1C1B18] tracking-tight">
           Experience Hippo Health <span className="italic font-serif text-[#8C6B1F]">Live</span>
         </h2>
@@ -140,7 +115,7 @@ export function InteractiveFeatureShowcase() {
               : "bg-white text-[#4D493E] hover:bg-[#FAF6E8] border border-[#E3DAC4]"
           }`}
         >
-          <MessageSquare className="w-4 h-4 text-[#F4E071]" />
+          <MaterialIcon name="chat" className="text-base text-[#F4E071]" />
           <span>1. AI Medical Chatbot</span>
         </button>
 
@@ -152,7 +127,7 @@ export function InteractiveFeatureShowcase() {
               : "bg-white text-[#4D493E] hover:bg-[#FAF6E8] border border-[#E3DAC4]"
           }`}
         >
-          <Stethoscope className="w-4 h-4 text-[#7BB1D1]" />
+          <MaterialIcon name="stethoscope" className="text-base text-[#7BB1D1]" />
           <span>2. Doctor-Verified AI</span>
         </button>
 
@@ -164,7 +139,7 @@ export function InteractiveFeatureShowcase() {
               : "bg-white text-[#4D493E] hover:bg-[#FAF6E8] border border-[#E3DAC4]"
           }`}
         >
-          <Watch className="w-4 h-4 text-[#4EBD88]" />
+          <MaterialIcon name="watch" className="text-base text-[#4EBD88]" />
           <span>3. Smartwatch Sync</span>
         </button>
 
@@ -176,7 +151,7 @@ export function InteractiveFeatureShowcase() {
               : "bg-white text-[#4D493E] hover:bg-[#FAF6E8] border border-[#E3DAC4]"
           }`}
         >
-          <Eye className="w-4 h-4 text-[#E67CAE]" />
+          <MaterialIcon name="visibility" className="text-base text-[#E67CAE]" />
           <span>4. 3D Anatomy Viewer</span>
         </button>
       </div>
@@ -230,7 +205,7 @@ export function InteractiveFeatureShowcase() {
                         : "bg-[#8C6B1F] text-white"
                     }`}
                   >
-                    {msg.sender === "user" ? "You" : <Bot className="w-4 h-4" />}
+                    {msg.sender === "user" ? "You" : <MaterialIcon name="smart_toy" className="text-base text-white" />}
                   </div>
                   <div
                     className={`max-w-xl text-xs sm:text-sm p-4 rounded-2xl shadow-2xs font-sans leading-relaxed ${
@@ -275,7 +250,7 @@ export function InteractiveFeatureShowcase() {
                 className="p-3 bg-[#F6F4EF] hover:bg-[#EBE6D8] border border-[#E3DAC4] rounded-xl text-[#1C1B18] transition-colors"
                 title="Upload Report"
               >
-                <Upload className="w-4 h-4" />
+                <MaterialIcon name="upload" className="text-base" />
               </button>
               <button
                 onClick={() => setIsRecording(!isRecording)}
@@ -286,7 +261,7 @@ export function InteractiveFeatureShowcase() {
                 }`}
                 title="Voice Input"
               >
-                <Mic className="w-4 h-4" />
+                <MaterialIcon name="mic" className="text-base" />
               </button>
 
               <input
@@ -303,7 +278,7 @@ export function InteractiveFeatureShowcase() {
                 className="bg-[#1C1B18] hover:bg-[#33312B] text-white px-5 py-3 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors"
               >
                 <span>Send</span>
-                <Send className="w-3.5 h-3.5" />
+                <MaterialIcon name="send" className="text-sm text-white" />
               </button>
             </div>
           </div>
@@ -326,7 +301,7 @@ export function InteractiveFeatureShowcase() {
               <div className="bg-[#FAF6E8] border border-[#EDE4CD] rounded-2xl p-5 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <Bot className="w-4 h-4 text-[#8C6B1F]" />
+                    <MaterialIcon name="smart_toy" className="text-base text-[#8C6B1F]" />
                     <span className="text-xs font-bold text-[#1C1B18] uppercase tracking-wider">
                       AI Generated Recommendation Draft
                     </span>
@@ -354,7 +329,7 @@ export function InteractiveFeatureShowcase() {
               <div className="bg-[#E8F2FC]/70 border border-[#B5D5F5] rounded-2xl p-5 space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <UserCheck className="w-4 h-4 text-[#1C5396]" />
+                    <MaterialIcon name="person_check" className="text-base text-[#1C5396]" />
                     <span className="text-xs font-bold text-[#1C5396] uppercase tracking-wider">
                       Doctor Review Workspace
                     </span>
@@ -366,7 +341,7 @@ export function InteractiveFeatureShowcase() {
 
                 <div className="space-y-2">
                   <label className="text-xs font-bold text-[#1C5396] flex items-center gap-1">
-                    <Edit3 className="w-3.5 h-3.5" />
+                    <MaterialIcon name="edit" className="text-sm text-[#1C5396]" />
                     Doctor Clinical Notes & Modifications:
                   </label>
                   <textarea
@@ -388,12 +363,12 @@ export function InteractiveFeatureShowcase() {
                   >
                     {isApproved ? (
                       <>
-                        <Check className="w-4 h-4" />
+                        <MaterialIcon name="check" className="text-base" />
                         <span>FINAL CARE PLAN APPROVED & VERIFIED</span>
                       </>
                     ) : (
                       <>
-                        <CheckCircle2 className="w-4 h-4" />
+                        <MaterialIcon name="check_circle" className="text-base" />
                         <span>APPROVE & RELEASE TO PATIENT</span>
                       </>
                     )}
@@ -405,7 +380,7 @@ export function InteractiveFeatureShowcase() {
             {/* Bottom Status Banner */}
             {isApproved && (
               <div className="bg-[#E6F5EE] border border-[#B2E6CF] p-4 rounded-xl flex items-center gap-3 text-xs text-[#155939] font-medium animate-fadeIn">
-                <CheckCircle2 className="w-5 h-5 text-[#2C7A4D] shrink-0" />
+                <MaterialIcon name="check_circle" className="text-xl text-[#2C7A4D] shrink-0" />
                 <span>
                   Care plan verified by Dr. Sarah Chen, MD. Patient Marcus Vance will receive notification with verified clinical instructions and updated smartwatch target metrics.
                 </span>
@@ -435,7 +410,7 @@ export function InteractiveFeatureShowcase() {
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               <div className="bg-[#FAF6E8] border border-[#EDE4CD] p-4 rounded-2xl space-y-2">
                 <div className="flex items-center justify-between text-[#8C6B1F]">
-                  <Heart className="w-4 h-4" />
+                  <MaterialIcon name="favorite" className="text-base text-[#8C6B1F]" fill />
                   <span className="text-[10px] font-bold uppercase">Heart Rate</span>
                 </div>
                 <div className="text-2xl font-serif font-bold text-[#1C1B18]">{heartRate} <span className="text-xs font-sans font-normal text-[#787363]">bpm</span></div>
@@ -451,7 +426,7 @@ export function InteractiveFeatureShowcase() {
 
               <div className="bg-[#E8F2FC] border border-[#B5D5F5] p-4 rounded-2xl space-y-2">
                 <div className="flex items-center justify-between text-[#1C5396]">
-                  <Activity className="w-4 h-4" />
+                  <MaterialIcon name="vital_signs" className="text-base text-[#1C5396]" />
                   <span className="text-[10px] font-bold uppercase">SpO₂ Level</span>
                 </div>
                 <div className="text-2xl font-serif font-bold text-[#1C1B18]">{spO2}%</div>
@@ -467,7 +442,7 @@ export function InteractiveFeatureShowcase() {
 
               <div className="bg-[#E6F5EE] border border-[#B2E6CF] p-4 rounded-2xl space-y-2">
                 <div className="flex items-center justify-between text-[#1E734C]">
-                  <Moon className="w-4 h-4" />
+                  <MaterialIcon name="bedtime" className="text-base text-[#1E734C]" />
                   <span className="text-[10px] font-bold uppercase">Sleep</span>
                 </div>
                 <div className="text-2xl font-serif font-bold text-[#1C1B18]">{sleepHrs} <span className="text-xs font-sans font-normal text-[#787363]">hrs</span></div>
@@ -484,7 +459,7 @@ export function InteractiveFeatureShowcase() {
 
               <div className="bg-[#FBEBF2] border border-[#F5C4DB] p-4 rounded-2xl space-y-2">
                 <div className="flex items-center justify-between text-[#942A5C]">
-                  <Footprints className="w-4 h-4" />
+                  <MaterialIcon name="footprint" className="text-base text-[#942A5C]" />
                   <span className="text-[10px] font-bold uppercase">Steps</span>
                 </div>
                 <div className="text-2xl font-serif font-bold text-[#1C1B18]">8,420</div>
@@ -493,7 +468,7 @@ export function InteractiveFeatureShowcase() {
 
               <div className="bg-[#FAF2D6] border border-[#E8DAA8] p-4 rounded-2xl space-y-2">
                 <div className="flex items-center justify-between text-[#6B571B]">
-                  <Flame className="w-4 h-4" />
+                  <MaterialIcon name="local_fire_department" className="text-base text-[#6B571B]" fill />
                   <span className="text-[10px] font-bold uppercase">Calories</span>
                 </div>
                 <div className="text-2xl font-serif font-bold text-[#1C1B18]">2,150 <span className="text-xs font-sans font-normal text-[#787363]">kcal</span></div>
@@ -505,7 +480,7 @@ export function InteractiveFeatureShowcase() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
               <div className="bg-[#FAF6E8] border border-[#EDE4CD] rounded-2xl p-5 space-y-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-[#8C6B1F] flex items-center gap-2">
-                  <Sparkles className="w-4 h-4" />
+                  <MaterialIcon name="auto_awesome" className="text-base text-[#8C6B1F]" />
                   AI Personalized Diet Plan
                 </h4>
                 <div className="space-y-2 text-xs text-[#38352E]">
@@ -523,7 +498,7 @@ export function InteractiveFeatureShowcase() {
 
               <div className="bg-[#E6F5EE] border border-[#B2E6CF] rounded-2xl p-5 space-y-3">
                 <h4 className="text-xs font-bold uppercase tracking-wider text-[#1E734C] flex items-center gap-2">
-                  <Zap className="w-4 h-4" />
+                  <MaterialIcon name="bolt" className="text-base text-[#1E734C]" />
                   Recovery & Timetable Insights
                 </h4>
                 <div className="space-y-2 text-xs text-[#155939]">

@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { MessageSquare, Stethoscope, Watch, Eye, ArrowUpRight, Sparkles } from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const coreServices = [
   {
@@ -14,7 +14,7 @@ const coreServices = [
     borderColor: "border-[#E8DAA8]",
     textColor: "text-[#594918]",
     badgeBg: "bg-white/80 text-[#6B571B]",
-    icon: MessageSquare,
+    iconName: "chat",
     bullets: ["Medical Q&A", "Report Upload", "Voice Input", "Context Memory"],
   },
   {
@@ -27,7 +27,7 @@ const coreServices = [
     borderColor: "border-[#B5D5F5]",
     textColor: "text-[#18467A]",
     badgeBg: "bg-white/80 text-[#1C5396]",
-    icon: Stethoscope,
+    iconName: "stethoscope",
     bullets: ["Doctor Connection", "AI Recommendations", "Clinical Edits", "Final Verification"],
   },
   {
@@ -40,7 +40,7 @@ const coreServices = [
     borderColor: "border-[#B2E6CF]",
     textColor: "text-[#155939]",
     badgeBg: "bg-white/80 text-[#1E734C]",
-    icon: Watch,
+    iconName: "watch",
     bullets: ["Biometric Sync", "SpO₂ & Sleep", "AI Diet Planner", "Tracking Dashboard"],
   },
   {
@@ -53,7 +53,7 @@ const coreServices = [
     borderColor: "border-[#F5C4DB]",
     textColor: "text-[#751B47]",
     badgeBg: "bg-white/80 text-[#942A5C]",
-    icon: Eye,
+    iconName: "visibility",
     bullets: ["3D Body Systems", "Diseased Organ Heatmap", "Symptom Map", "Doctor Educational Tool"],
   },
 ];
@@ -76,7 +76,6 @@ export function CoreServicesGrid() {
       {/* 4 Colored Cards Grid (Matching reference image pastel grid) */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {coreServices.map((service) => {
-          const IconComp = service.icon;
           return (
             <div
               key={service.id}
@@ -89,7 +88,7 @@ export function CoreServicesGrid() {
                     {service.subtitle}
                   </span>
                   <div className="w-10 h-10 rounded-full bg-white/90 shadow-2xs flex items-center justify-center text-[#1C1B18]">
-                    <IconComp className="w-5 h-5" />
+                    <MaterialIcon name={service.iconName} className="text-xl" />
                   </div>
                 </div>
 
@@ -126,7 +125,7 @@ export function CoreServicesGrid() {
                     className="w-10 h-10 rounded-full bg-[#1C1B18] text-white flex items-center justify-center group-hover:bg-[#8C6B1F] group-hover:scale-105 transition-all shadow-sm"
                     aria-label={`Explore ${service.title}`}
                   >
-                    <ArrowUpRight className="w-4 h-4" />
+                    <MaterialIcon name="arrow_outward" className="text-lg text-white" />
                   </a>
                 </div>
               </div>

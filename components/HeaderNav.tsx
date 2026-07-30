@@ -1,10 +1,9 @@
-"use me";
 "use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { User, Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 export function HeaderNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -79,7 +78,7 @@ export function HeaderNav() {
             aria-label="User Account"
             className="w-10 h-10 rounded-full border border-[#DCD5C5] bg-white flex items-center justify-center text-[#1C1B18] hover:bg-[#FAF6E8] transition-colors shadow-xs"
           >
-            <User className="w-4 h-4" />
+            <MaterialIcon name="person" className="text-xl" />
           </button>
           <a
             href="#interactive-showcase"
@@ -87,7 +86,7 @@ export function HeaderNav() {
           >
             <span>LAUNCH PLATFORM</span>
             <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-              <ArrowUpRight className="w-3 h-3 text-white" />
+              <MaterialIcon name="arrow_outward" className="text-sm text-white" />
             </span>
           </a>
         </div>
@@ -99,7 +98,11 @@ export function HeaderNav() {
             className="p-2 rounded-lg text-[#1C1B18] hover:bg-[#EBE6D8]"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <MaterialIcon name="close" className="text-2xl" />
+            ) : (
+              <MaterialIcon name="menu" className="text-2xl" />
+            )}
           </button>
         </div>
       </div>
@@ -120,7 +123,7 @@ export function HeaderNav() {
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 border-b border-[#E8E2D4] flex items-center gap-2"
             >
-              <Sparkles className="w-4 h-4 text-[#C49A24]" />
+              <MaterialIcon name="auto_awesome" className="text-lg text-[#C49A24]" />
               Live AI Demos
             </Link>
             <Link

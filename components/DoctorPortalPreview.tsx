@@ -1,17 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import {
-  Users,
-  Stethoscope,
-  CheckCircle2,
-  Edit3,
-  MessageSquare,
-  History,
-  Sparkles,
-  ArrowRight,
-  ShieldAlert,
-} from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const patientsList = [
   {
@@ -28,18 +18,18 @@ const patientsList = [
     name: "David Miller",
     age: 62,
     gender: "Male",
-    condition: "Cardiovascular Risk 34% (XGBoost)",
-    status: "Verified ✓",
-    aiRec: "Prescribe lipid-lowering protocol & 30-min daily exercise.",
+    condition: "Cardiovascular XGBoost Risk (34%)",
+    status: "Doctor Verified ✓",
+    aiRec: "Prescribe statin therapy and continuous smartwatch BP monitoring.",
   },
   {
     id: "P-903",
-    name: "Sophia Martinez",
-    age: 29,
+    name: "Aria Sharma",
+    age: 31,
     gender: "Female",
-    condition: "Femur Fracture Bounding Box",
-    status: "Verified ✓",
-    aiRec: "Surgical alignment & orthopedic immobilization.",
+    condition: "Dermatoscope Lesion Classifier",
+    status: "Pending Review",
+    aiRec: "Benign seborrheic keratosis pattern detected. Routine follow-up.",
   },
 ];
 
@@ -49,17 +39,20 @@ export function DoctorPortalPreview() {
   const [discussionHistory, setDiscussionHistory] = useState([
     {
       sender: "doctor",
-      text: "AI Copilot, why did you flag lung opacity for Eleanor Vance given her non-smoker status?",
+      text: "AI Copilot, why did YOLOv11 flag the right lower lobe in Eleanor's scan?",
     },
     {
       sender: "ai",
-      text: "Dr. Chen, YOLOv11 detected a 1.8cm hyperdense opacity in the right lower lobe with 96.2% confidence. While non-smoker, her elevated C-reactive protein (14 mg/L) suggests acute infectious etiology.",
+      text: "The TorchXRayVision heatmap indicates a 98.4% opacity probability matching focal consolidation. I recommend correlation with elevated white blood cell count and clinical breath sounds.",
     },
   ]);
 
   const handleSendDiscussion = () => {
     if (!discussionInput.trim()) return;
-    const newHistory = [...discussionHistory, { sender: "doctor", text: discussionInput }];
+    const newHistory = [
+      ...discussionHistory,
+      { sender: "doctor", text: discussionInput },
+    ];
     setDiscussionHistory(newHistory);
     setDiscussionInput("");
 
@@ -68,7 +61,7 @@ export function DoctorPortalPreview() {
         ...prev,
         {
           sender: "ai",
-          text: "Understood, Dr. Chen. Updating patient log with your clinical modification and saving to verified EHR history.",
+          text: "I have updated the clinical rationale based on your input. Care plan draft has been saved to Eleanor Vance's chart.",
         },
       ]);
     }, 700);
@@ -96,7 +89,7 @@ export function DoctorPortalPreview() {
           <div className="lg:col-span-4 space-y-4 bg-white border border-[#E3DAC4] p-5 rounded-2xl">
             <div className="flex items-center justify-between border-b border-[#EBE6D8] pb-3">
               <span className="text-xs font-bold uppercase tracking-wider text-[#1C1B18] flex items-center gap-2">
-                <Users className="w-4 h-4 text-[#8C6B1F]" />
+                <MaterialIcon name="groups" className="text-base text-[#8C6B1F]" />
                 Connected Patients (3)
               </span>
               <span className="text-[10px] bg-[#FAF6E8] border border-[#E8DAA8] text-[#8C6B1F] px-2 py-0.5 rounded-full font-bold">
@@ -171,7 +164,7 @@ export function DoctorPortalPreview() {
             <div className="bg-white border border-[#E3DAC4] p-5 rounded-2xl space-y-4">
               <div className="flex items-center justify-between border-b border-[#EBE6D8] pb-3">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#1C5396] flex items-center gap-2">
-                  <MessageSquare className="w-4 h-4 text-[#1C5396]" />
+                  <MaterialIcon name="chat" className="text-base text-[#1C5396]" />
                   Discuss Recommendation with Hippo AI
                 </span>
                 <span className="text-[10px] bg-[#E8F2FC] text-[#1C5396] px-2.5 py-0.5 rounded-full font-bold">

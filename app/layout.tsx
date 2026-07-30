@@ -36,6 +36,12 @@ export default function RootLayout({
       lang="en"
       className={`${plusJakartaSans.variable} ${instrumentSerif.variable} h-full antialiased scroll-smooth`}
     >
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        />
+      </head>
       <body className="min-h-full flex flex-col bg-[#F6F4EF] text-[#1C1B18] font-sans selection:bg-[#F4E071] selection:text-[#1C1B18]">
         {children}
       </body>

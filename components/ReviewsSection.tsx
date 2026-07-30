@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const reviews = [
   {
@@ -70,14 +70,14 @@ export function ReviewsSection() {
               className="w-12 h-12 rounded-full border border-[#DCD5C5] bg-white flex items-center justify-center text-[#1C1B18] hover:bg-[#F4E071] transition-colors shadow-2xs"
               aria-label="Previous Review"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <MaterialIcon name="chevron_left" className="text-2xl text-[#1C1B18]" />
             </button>
             <button
               onClick={() => setActiveIdx((prev) => (prev === reviews.length - 1 ? 0 : prev + 1))}
               className="w-12 h-12 rounded-full bg-[#1C1B18] text-white flex items-center justify-center hover:bg-[#33312B] transition-colors shadow-2xs"
               aria-label="Next Review"
             >
-              <ChevronRight className="w-5 h-5" />
+              <MaterialIcon name="chevron_right" className="text-2xl text-white" />
             </button>
           </div>
         </div>
@@ -108,9 +108,9 @@ export function ReviewsSection() {
                     {rev.role}
                   </span>
                 </div>
-                <div className="flex items-center gap-0.5 text-[#F4E071]">
+                <div className="flex items-center gap-0.5 text-[#C49A24]">
                   {[...Array(rev.rating)].map((_, s) => (
-                    <Star key={s} className="w-3.5 h-3.5 fill-[#C49A24] text-[#C49A24]" />
+                    <MaterialIcon key={s} name="star" className="text-sm text-[#C49A24]" fill />
                   ))}
                 </div>
               </div>

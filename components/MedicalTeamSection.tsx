@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Stethoscope, Sparkles } from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const doctors = [
   {
@@ -81,14 +81,14 @@ export function MedicalTeamSection() {
             className="w-12 h-12 rounded-full border border-[#DCD5C5] bg-white flex items-center justify-center text-[#1C1B18] hover:bg-[#FAF6E8] transition-colors shadow-2xs"
             aria-label="Previous Doctor"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <MaterialIcon name="chevron_left" className="text-2xl text-[#1C1B18]" />
           </button>
           <button
             onClick={handleNext}
             className="w-12 h-12 rounded-full bg-[#1C1B18] text-white flex items-center justify-center hover:bg-[#33312B] transition-colors shadow-2xs"
             aria-label="Next Doctor"
           >
-            <ChevronRight className="w-5 h-5" />
+            <MaterialIcon name="chevron_right" className="text-2xl text-white" />
           </button>
         </div>
       </div>
@@ -103,7 +103,7 @@ export function MedicalTeamSection() {
             {/* Top Color Portrait Frame */}
             <div className={`w-full h-64 rounded-[24px] ${doc.avatarBg} border border-white/80 flex flex-col items-center justify-center p-4 relative overflow-hidden shadow-inner`}>
               <div className="w-24 h-24 rounded-full bg-white shadow-md flex items-center justify-center mb-3">
-                <Stethoscope className="w-12 h-12 text-[#1C1B18]" />
+                <MaterialIcon name="stethoscope" className="text-4xl text-[#1C1B18]" />
               </div>
               <span className={`text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-full ${doc.badgeColor} shadow-2xs`}>
                 {doc.specialty}

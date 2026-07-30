@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, ShieldCheck, Heart } from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 export function Footer() {
   return (
@@ -39,7 +39,7 @@ export function Footer() {
             </p>
 
             <div className="flex items-center gap-2 text-xs text-[#F4E071]">
-              <ShieldCheck className="w-4 h-4" />
+              <MaterialIcon name="verified_user" className="text-base text-[#F4E071]" />
               <span>HIPAA & GDPR Compliant Medical Architecture</span>
             </div>
           </div>
@@ -132,7 +132,7 @@ export function Footer() {
                 className="bg-[#F4E071] text-[#1C1B18] p-2 rounded-xl hover:bg-[#E8C838] transition-colors"
                 aria-label="Subscribe"
               >
-                <ArrowRight className="w-4 h-4" />
+                <MaterialIcon name="arrow_forward" className="text-base text-[#1C1B18]" />
               </button>
             </div>
           </div>

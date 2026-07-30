@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, ShieldCheck, Sparkles, Activity, Bot, Stethoscope } from "lucide-react";
+import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 export function HeroSection() {
   return (
@@ -39,7 +39,7 @@ export function HeroSection() {
               >
                 <span>Book Consultation</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
-                  <ArrowRight className="w-3.5 h-3.5 text-white" />
+                  <MaterialIcon name="arrow_forward" className="text-sm text-white" />
                 </span>
               </a>
 
@@ -73,15 +73,15 @@ export function HeroSection() {
             {/* Trust Tags */}
             <div className="pt-4 border-t border-[#E8DFC9] grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-[#595446]">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="w-4 h-4 text-[#2C7A4D]" />
+                <MaterialIcon name="verified_user" className="text-base text-[#2C7A4D]" />
                 <span>HIPAA & GDPR Compliant</span>
               </div>
               <div className="flex items-center gap-2">
-                <Stethoscope className="w-4 h-4 text-[#1C5396]" />
+                <MaterialIcon name="stethoscope" className="text-base text-[#1C5396]" />
                 <span>Doctor Verified AI</span>
               </div>
               <div className="flex items-center gap-2">
-                <Activity className="w-4 h-4 text-[#942A5C]" />
+                <MaterialIcon name="vital_signs" className="text-base text-[#942A5C]" />
                 <span>Google Health API Sync</span>
               </div>
             </div>
@@ -100,7 +100,7 @@ export function HeroSection() {
                 {/* Simulated Doctor Photo / Graphic */}
                 <div className="relative z-10 w-full h-full flex flex-col items-center justify-center p-4">
                   <div className="w-24 h-24 rounded-full bg-white/90 shadow-md flex items-center justify-center mb-3">
-                    <Stethoscope className="w-12 h-12 text-[#1C5396]" />
+                    <MaterialIcon name="stethoscope" className="text-4xl text-[#1C5396]" />
                   </div>
                   <span className="bg-white/90 text-[#1C5396] text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-2xs mb-1">
                     Doctor Review
@@ -124,7 +124,7 @@ export function HeroSection() {
                 </div>
                 
                 <div className="w-16 h-16 rounded-full bg-[#E6F5EE] flex items-center justify-center my-2 shadow-inner">
-                  <Bot className="w-8 h-8 text-[#1E734C]" />
+                  <MaterialIcon name="smart_toy" className="text-3xl text-[#1E734C]" />
                 </div>
 
                 <div className="text-center pb-2">
@@ -156,7 +156,7 @@ export function HeroSection() {
 
               {/* Small Floating Pill Badge */}
               <div className="absolute left-6 bottom-4 bg-white border border-[#E3DAC4] shadow-md rounded-full px-4 py-2 flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-[#2C7A4D]" />
+                <MaterialIcon name="check_circle" className="text-base text-[#2C7A4D]" />
                 <span className="text-xs font-bold text-[#1C1B18]">
                   Smartwatch Sync Active
                 </span>
