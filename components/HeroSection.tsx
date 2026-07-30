@@ -9,9 +9,9 @@ import LanyardWrapper from "@/components/LanyardWrapper";
 
 export function HeroSection() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-8 relative z-[999]">
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-6 relative z-[999]">
       {/* Main Soft Yellow Container Card */}
-      <div className="relative w-full bg-[#FAF6E8] border border-[#EDE4CD] rounded-[36px] p-8 sm:p-12 lg:p-16 overflow-visible shadow-xs z-[999]">
+      <div className="relative w-full bg-[#FAF6E8] rounded-[36px] p-6 sm:p-8 lg:p-10 overflow-visible shadow-xs z-[999]">
         
         {/* Background Subtle Gradient Blobs */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#F4E071]/30 rounded-full blur-3xl pointer-events-none" />
@@ -26,7 +26,7 @@ export function HeroSection() {
               fov={24}
               cards={[
                 {
-                  positionX: 1.0,
+                  positionX: 2.2,
                   frontImage: "/kushal_b_k.jpg",
                   backImage: "/debug_thugs_logo.png",
                   imageFit: "cover",
@@ -58,9 +58,9 @@ export function HeroSection() {
               scrollStart="center bottom+=50%"
               scrollEnd="bottom bottom-=40%"
               stagger={0.03}
-              containerClassName="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-[#1C1B18] tracking-tight leading-[1.08]"
+              containerClassName="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1B18] tracking-tight leading-[1.08]"
             >
-              Your <span className="text-[#8C6B1F]">Health</span>,<br />Smarter.
+              AI Powered <span className="text-[#8C6B1F]">Health</span><br />For Everyone.
             </ScrollFloat>
 
             {/* Supporting Subtitle */}
