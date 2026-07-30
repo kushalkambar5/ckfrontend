@@ -18,7 +18,7 @@ export function HeroSection() {
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#D4E6F8]/40 rounded-full blur-3xl pointer-events-none font-sans" />
 
         {/* Full-bleed Screen-Width 3D Lanyards Canvas (Spans 0px to 100vw from Left to Right Edge) */}
-        <div className="absolute -top-44 sm:-top-56 md:-top-64 left-[calc(50%-50vw)] w-[100vw] h-[780px] sm:h-[850px] z-[9999] pointer-events-none">
+        <div className="absolute -top-16 sm:-top-24 md:-top-28 left-[calc(50%-50vw)] w-[100vw] h-[780px] sm:h-[850px] z-[9999] pointer-events-none">
           <div className="w-full h-full pointer-events-auto">
             <LanyardWrapper
               position={[0, 0, 18]}
@@ -30,14 +30,14 @@ export function HeroSection() {
                   frontImage: "/kushal_b_k.jpg",
                   backImage: "/debug_thugs_logo.png",
                   imageFit: "cover",
-                  lanyardWidth: 1.2
+                  lanyardWidth: 0.55
                 },
                 {
                   positionX: 4.8,
                   frontImage: "/bhuvan_rai.jpg",
                   backImage: "/debug_thugs_logo.png",
                   imageFit: "cover",
-                  lanyardWidth: 1.2
+                  lanyardWidth: 0.55
                 }
               ]}
             />

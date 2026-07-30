@@ -54,7 +54,7 @@ export default function Lanyard({
   backImage = defaultBackLogo,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1.2
+  lanyardWidth = 0.55
 }: LanyardProps) {
   const [isMobile, setIsMobile] = useState<boolean>(() => typeof window !== 'undefined' && window.innerWidth < 768);
 
@@ -87,7 +87,7 @@ export default function Lanyard({
         onCreated={({ gl }: { gl: THREE.WebGLRenderer }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
         style={{ pointerEvents: 'auto' }}
       >
-        <ambientLight intensity={Math.PI} />
+        <ambientLight intensity={1.2} />
         <Suspense fallback={null}>
           <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
             {cardList.map((card, idx) => {
@@ -110,28 +110,28 @@ export default function Lanyard({
           </Physics>
           <Environment blur={0.75}>
             <Lightformer
-              intensity={2}
+              intensity={1}
               color="white"
               position={[0, -1, 5]}
               rotation={[0, 0, Math.PI / 3]}
               scale={[100, 0.1, 1]}
             />
             <Lightformer
-              intensity={3}
+              intensity={1.5}
               color="white"
               position={[-1, -1, 1]}
               rotation={[0, 0, Math.PI / 3]}
               scale={[100, 0.1, 1]}
             />
             <Lightformer
-              intensity={3}
+              intensity={1.5}
               color="white"
               position={[1, 1, 1]}
               rotation={[0, 0, Math.PI / 3]}
               scale={[100, 0.1, 1]}
             />
             <Lightformer
-              intensity={10}
+              intensity={2.5}
               color="white"
               position={[-10, 0, 14]}
               rotation={[0, Math.PI / 2, Math.PI / 3]}
@@ -165,7 +165,7 @@ function Band({
   backImage = defaultBackLogo,
   imageFit = 'cover',
   lanyardImage = null,
-  lanyardWidth = 1.2
+  lanyardWidth = 0.55
 }: BandProps) {
   const band = useRef<any>(null),
     fixed = useRef<any>(null),
@@ -373,10 +373,10 @@ function Band({
               <meshPhysicalMaterial
                 map={cardMap}
                 map-anisotropy={16}
-                clearcoat={isMobile ? 0 : 1}
-                clearcoatRoughness={0.1}
-                roughness={0.25}
-                metalness={0.05}
+                clearcoat={isMobile ? 0 : 0.3}
+                clearcoatRoughness={0.3}
+                roughness={0.5}
+                metalness={0.0}
               />
             </mesh>
             <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
