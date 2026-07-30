@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 export function DiagnosticSuiteDark() {
   // Cardiovascular XGBoost Calculator State
@@ -25,9 +26,17 @@ export function DiagnosticSuiteDark() {
         {/* Header (Matches "Our Featured Product" in reference image) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#33312B] pb-8">
           <div className="space-y-3">
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight">
-              Our Advanced <span className="font-serif text-[#F4E071]">AI Diagnostic</span> Suite
-            </h2>
+            <ScrollFloat
+              as="h2"
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+              containerClassName="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight"
+            >
+              Our Advanced <span className="text-[#F4E071]">AI Diagnostic</span> Suite
+            </ScrollFloat>
             <p className="text-sm sm:text-base text-[#AAA595] font-sans max-w-xl">
               High-precision computer vision, XGBoost risk stratification, and neural network classification models engineered for clinical decision support.
             </p>

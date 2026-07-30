@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 const patientsList = [
   {
@@ -72,9 +73,17 @@ export function DoctorPortalPreview() {
       
       {/* Section Title */}
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-        <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#1C1B18] tracking-tight">
-          Empowering Doctors with <span className="font-serif text-[#8C6B1F]">AI Copilots</span>
-        </h2>
+        <ScrollFloat
+          as="h2"
+          animationDuration={1}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+          containerClassName="font-serif text-4xl sm:text-5xl font-normal text-[#1C1B18] tracking-tight"
+        >
+          Empowering Doctors with <span className="text-[#8C6B1F]">AI Copilots</span>
+        </ScrollFloat>
         <p className="text-base text-[#595446] font-sans">
           A seamless portal where clinicians review connected patients, discuss cases directly with AI engines, edit recommendations, and approve final care plans.
         </p>

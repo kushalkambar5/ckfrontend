@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 const reviews = [
   {
@@ -55,9 +56,17 @@ export function ReviewsSection() {
             <span className="text-xs font-bold tracking-widest text-[#787363] uppercase">
               PATIENT & CLINICIAN FEEDBACK
             </span>
-            <h2 className="font-serif text-5xl sm:text-6xl font-normal text-[#1C1B18] tracking-tight">
-              1800+ <span className="font-serif text-[#8C6B1F]">Reviews</span>
-            </h2>
+            <ScrollFloat
+              as="h2"
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+              containerClassName="font-serif text-5xl sm:text-6xl font-normal text-[#1C1B18] tracking-tight"
+            >
+              1800+ <span className="text-[#8C6B1F]">Reviews</span>
+            </ScrollFloat>
             <p className="text-sm sm:text-base text-[#595446] font-sans max-w-md">
               Real experiences from patients and physicians using Hippo Health for precision AI care.
             </p>

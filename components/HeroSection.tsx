@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 export function HeroSection() {
   return (
@@ -21,10 +22,17 @@ export function HeroSection() {
             
 
             {/* Editorial Serif Headline (Matches Reference Image Style) */}
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-[#1C1B18] tracking-tight leading-[1.08]">
-              Your <span className="font-serif text-[#8C6B1F]">Health</span>,<br />
-              Smarter.
-            </h1>
+            <ScrollFloat
+              as="h1"
+              animationDuration={1}
+              ease="back.inOut(2)"
+              scrollStart="center bottom+=50%"
+              scrollEnd="bottom bottom-=40%"
+              stagger={0.03}
+              containerClassName="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-[#1C1B18] tracking-tight leading-[1.08]"
+            >
+              Your <span className="text-[#8C6B1F]">Health</span>,<br />Smarter.
+            </ScrollFloat>
 
             {/* Supporting Subtitle */}
             <p className="text-base sm:text-lg text-[#524E43] font-sans font-normal max-w-xl leading-relaxed">

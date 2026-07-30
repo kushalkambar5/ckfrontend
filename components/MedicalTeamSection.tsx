@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 const doctors = [
   {
@@ -66,9 +67,17 @@ export function MedicalTeamSection() {
           <span className="text-xs font-bold tracking-widest text-[#787363] uppercase">
             MEET OUR DOCTORS
           </span>
-          <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1B18] tracking-tight">
-            Discover Our Team of <span className="font-serif text-[#8C6B1F]">Health Experts</span>
-          </h2>
+          <ScrollFloat
+            as="h2"
+            animationDuration={1}
+            ease="back.inOut(2)"
+            scrollStart="center bottom+=50%"
+            scrollEnd="bottom bottom-=40%"
+            stagger={0.03}
+            containerClassName="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1B18] tracking-tight"
+          >
+            Discover Our Team of <span className="text-[#8C6B1F]">Health Experts</span>
+          </ScrollFloat>
           <p className="text-sm sm:text-base text-[#595446] font-sans max-w-lg">
             Board-certified physicians, radiologists, and oncologists validating every AI engine for patient safety.
           </p>

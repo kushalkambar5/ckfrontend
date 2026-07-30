@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import ScrollFloat from "@/components/ui/ScrollFloat";
 
 export function InteractiveFeatureShowcase() {
   const [activeTab, setActiveTab] = useState<"chatbot" | "doctor" | "smartwatch" | "anatomy">("chatbot");
@@ -97,9 +98,17 @@ export function InteractiveFeatureShowcase() {
       
       {/* Section Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-10">
-        <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#1C1B18] tracking-tight">
-          Experience Hippo Health <span className="font-serif text-[#8C6B1F]">Live</span>
-        </h2>
+        <ScrollFloat
+          as="h2"
+          animationDuration={1}
+          ease="back.inOut(2)"
+          scrollStart="center bottom+=50%"
+          scrollEnd="bottom bottom-=40%"
+          stagger={0.03}
+          containerClassName="font-serif text-4xl sm:text-5xl font-normal text-[#1C1B18] tracking-tight"
+        >
+          Experience Hippo Health <span className="text-[#8C6B1F]">Live</span>
+        </ScrollFloat>
         <p className="text-sm sm:text-base text-[#595446] font-sans">
           Select any interactive workspace below to explore real-time AI chatbots, physician verification workflows, smartwatch analytics, and 3D organ modeling.
         </p>
