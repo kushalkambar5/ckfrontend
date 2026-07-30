@@ -64,10 +64,7 @@ export function CoreServicesGrid() {
       
       {/* Section Header (Matches "Our core dental services" in reference image) */}
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
-        <div className="inline-flex items-center gap-2 bg-white border border-[#E3DAC4] px-4 py-1.5 rounded-full text-xs font-semibold text-[#8C6B1F] shadow-2xs">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>PRIMARY CLINICAL MODULES</span>
-        </div>
+        
         <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1B18] tracking-tight">
           Our core <span className="italic font-serif text-[#8C6B1F]">medical</span> services
         </h2>

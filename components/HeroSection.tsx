@@ -19,11 +19,6 @@ export function HeroSection() {
           {/* Left Column: Hero Copy & Actions */}
           <div className="lg:col-span-7 flex flex-col space-y-6 sm:space-y-8">
             
-            {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 self-start bg-white/80 backdrop-blur-xs border border-[#E6DEC6] px-4 py-1.5 rounded-full text-xs font-semibold text-[#665D46] shadow-2xs">
-              <Sparkles className="w-3.5 h-3.5 text-[#C49A24]" />
-              <span>Next-Gen Doctor-Verified Medical AI</span>
-            </div>
 
             {/* Editorial Serif Headline (Matches Reference Image Style) */}
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-[#1C1B18] tracking-tight leading-[1.08]">

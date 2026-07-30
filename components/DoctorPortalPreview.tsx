@@ -79,10 +79,6 @@ export function DoctorPortalPreview() {
       
       {/* Section Title */}
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-        <div className="inline-flex items-center gap-2 bg-[#E8F2FC] border border-[#B5D5F5] px-4 py-1.5 rounded-full text-xs font-semibold text-[#1C5396]">
-          <Stethoscope className="w-3.5 h-3.5 text-[#1C5396]" />
-          <span>CLINICIAN WORKSPACE</span>
-        </div>
         <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#1C1B18] tracking-tight">
           Empowering Doctors with <span className="italic font-serif text-[#8C6B1F]">AI Copilots</span>
         </h2>

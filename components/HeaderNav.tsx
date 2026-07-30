@@ -45,7 +45,6 @@ export function HeaderNav() {
             href="#interactive-showcase"
             className="text-sm font-sans font-medium text-[#4D493E] hover:text-[#1C1B18] transition-colors flex items-center gap-1"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#C49A24]" />
             Live AI Demos
           </Link>
           <Link
