@@ -4,6 +4,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { MarqueeTicker } from "@/components/MarqueeTicker";
 import { StatsSection } from "@/components/StatsSection";
 import { CoreServicesGrid } from "@/components/CoreServicesGrid";
+import Strands from "@/components/Strands";
 import { InteractiveFeatureShowcase } from "@/components/InteractiveFeatureShowcase";
 import { DiagnosticSuiteDark } from "@/components/DiagnosticSuiteDark";
 import { DoctorPortalPreview } from "@/components/DoctorPortalPreview";
@@ -18,7 +19,7 @@ export default function Home() {
       <HeaderNav />
 
       {/* Main Content Sections */}
-      <main className="flex-1 w-full overflow-x-hidden">
+      <main className="flex-1 w-full overflow-x-clip">
         {/* Hero Section with Soft Butter Yellow Container Card */}
         <HeroSection />
 
@@ -30,6 +31,29 @@ export default function Home() {
 
         {/* 4 Pastel Core Medical Services Cards */}
         <CoreServicesGrid />
+
+        {/* Full-width Strands Component seamlessly integrated */}
+        <div className="w-full h-[260px] sm:h-[320px] lg:h-[380px] relative overflow-hidden pointer-events-none my-2">
+          <Strands
+            colors={["#F97316", "#7C3AED", "#06B6D4"]}
+            count={4}
+            speed={0.4}
+            amplitude={0.5}
+            waviness={1.9}
+            thickness={0.7}
+            glow={1.8}
+            taper={0.5}
+            spread={0}
+            intensity={0.7}
+            saturation={1.5}
+            opacity={1}
+            scale={2.2}
+            glass={false}
+            refraction={1}
+            dispersion={1}
+            glassSize={1}
+          />
+        </div>
 
         {/* Live Interactive Tabbed Feature Showcase */}
         <InteractiveFeatureShowcase />
