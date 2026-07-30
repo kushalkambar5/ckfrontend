@@ -1,36 +1,46 @@
 "use client";
 
 import React from "react";
+import ScrollVelocity from "@/components/ScrollVelocity";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
 const features = [
-  "AI Medical Chatbot & RAG",
-  "Doctor-Verified AI Recommendations",
-  "Google Health Smartwatch Sync",
-  "3D Human Anatomy Viewer",
-  "Chest X-Ray YOLOv11 & TorchXRayVision",
-  "Universal Bone Fracture Localization",
-  "Cardiovascular Risk XGBoost Engine",
-  "Brain Tumor MRI Lesion Detection",
-  "Skin Allergy & Dermatoscope AI",
-  "Clinical Patient Management Suite",
+  { text: "AI Medical Chatbot & RAG", icon: "smart_toy" },
+  { text: "Doctor-Verified AI Recommendations", icon: "verified" },
+  { text: "Google Health Smartwatch Sync", icon: "watch" },
+  { text: "3D Human Anatomy Viewer", icon: "view_in_ar" },
+  { text: "Chest X-Ray YOLOv11 & TorchXRayVision", icon: "radiology" },
+  { text: "Universal Bone Fracture Localization", icon: "healing" },
+  { text: "Cardiovascular Risk XGBoost Engine", icon: "favorite" },
+  { text: "Brain Tumor MRI Lesion Detection", icon: "psychology" },
+  { text: "Skin Allergy & Dermatoscope AI", icon: "medical_information" },
+  { text: "Clinical Patient Management Suite", icon: "assignment" },
 ];
 
 export function MarqueeTicker() {
+  const marqueeContent = (
+    <span className="inline-flex items-center">
+      {features.map((item, idx) => (
+        <span
+          key={idx}
+          className="inline-flex items-center gap-3 px-8 font-medium tracking-wide text-[#38352E] text-2xl sm:text-3xl md:text-4xl select-none"
+        >
+          <MaterialIcon name={item.icon} className="text-2xl sm:text-3xl md:text-4xl text-[#8C6B1F]" />
+          <span>{item.text}</span>
+        </span>
+      ))}
+    </span>
+  );
+
   return (
-    <div className="w-full bg-[#F6F4EF] py-4 border-y border-[#E6E1D3] overflow-hidden my-4">
-      <div className="relative flex items-center overflow-x-hidden">
-        <div className="animate-marquee whitespace-nowrap flex items-center gap-8">
-          {features.concat(features).map((item, idx) => (
-            <div key={idx} className="inline-flex items-center gap-8 group cursor-default">
-              <span className="font-serif text-lg sm:text-xl font-medium tracking-wide text-[#38352E] group-hover:text-[#8C6B1F] transition-colors">
-                {item}
-              </span>
-              <MaterialIcon name="auto_awesome" className="text-base text-[#C49A24]" />
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="w-full bg-[#F6F4EF] py-6 border-y border-[#E6E1D3] overflow-hidden my-4">
+      <ScrollVelocity
+        texts={[marqueeContent]}
+        velocity={160}
+        numCopies={4}
+      />
     </div>
   );
 }
+
+
