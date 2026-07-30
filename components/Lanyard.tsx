@@ -21,11 +21,22 @@ const defaultBackLogo = '/debug_thugs_logo.png';
 const BLANK_PIXEL =
   'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==';
 
+export interface CardConfig {
+  id?: string;
+  positionX?: number;
+  frontImage?: string | null;
+  backImage?: string | null;
+  imageFit?: 'cover' | 'contain';
+  lanyardImage?: string | null;
+  lanyardWidth?: number;
+}
+
 export interface LanyardProps {
   position?: [number, number, number];
   gravity?: [number, number, number];
   fov?: number;
   transparent?: boolean;
+  cards?: CardConfig[];
   frontImage?: string | null;
   backImage?: string | null;
   imageFit?: 'cover' | 'contain';
@@ -34,10 +45,11 @@ export interface LanyardProps {
 }
 
 export default function Lanyard({
-  position = [0, 0, 16],
+  position = [0, 0, 18],
   gravity = [0, -40, 0],
-  fov = 22,
+  fov = 24,
   transparent = true,
+  cards,
   frontImage = null,
   backImage = defaultBackLogo,
   imageFit = 'cover',
@@ -52,25 +64,49 @@ export default function Lanyard({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const cardList: CardConfig[] = useMemo(() => {
+    if (cards && cards.length > 0) return cards;
+    return [
+      {
+        positionX: 0,
+        frontImage,
+        backImage,
+        imageFit,
+        lanyardImage,
+        lanyardWidth
+      }
+    ];
+  }, [cards, frontImage, backImage, imageFit, lanyardImage, lanyardWidth]);
+
   return (
     <div className="lanyard-wrapper">
       <Canvas
-        camera={{ position: position, fov: fov }}
+        camera={{ position: position, fov: isMobile ? fov + 4 : fov }}
         dpr={[1, isMobile ? 1.5 : 2]}
         gl={{ alpha: transparent }}
         onCreated={({ gl }: { gl: THREE.WebGLRenderer }) => gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1)}
+        style={{ pointerEvents: 'auto' }}
       >
         <ambientLight intensity={Math.PI} />
         <Suspense fallback={null}>
           <Physics gravity={gravity} timeStep={isMobile ? 1 / 30 : 1 / 60}>
-            <Band
-              isMobile={isMobile}
-              frontImage={frontImage}
-              backImage={backImage || defaultBackLogo}
-              imageFit={imageFit}
-              lanyardImage={lanyardImage}
-              lanyardWidth={lanyardWidth}
-            />
+            {cardList.map((card, idx) => {
+              const defaultPosX = idx === 0 ? -2.6 : 2.6;
+              const posX = card.positionX ?? defaultPosX;
+              const finalPosX = isMobile ? (idx === 0 ? -1.4 : 1.4) : posX;
+              return (
+                <Band
+                  key={card.id || idx}
+                  positionX={finalPosX}
+                  isMobile={isMobile}
+                  frontImage={card.frontImage ?? frontImage}
+                  backImage={card.backImage ?? backImage ?? defaultBackLogo}
+                  imageFit={card.imageFit ?? imageFit}
+                  lanyardImage={card.lanyardImage ?? lanyardImage}
+                  lanyardWidth={card.lanyardWidth ?? lanyardWidth}
+                />
+              );
+            })}
           </Physics>
           <Environment blur={0.75}>
             <Lightformer
@@ -109,6 +145,7 @@ export default function Lanyard({
 }
 
 interface BandProps {
+  positionX?: number;
   maxSpeed?: number;
   minSpeed?: number;
   isMobile?: boolean;
@@ -120,6 +157,7 @@ interface BandProps {
 }
 
 function Band({
+  positionX = 0,
   maxSpeed = 50,
   minSpeed = 0,
   isMobile = false,
@@ -307,7 +345,7 @@ function Band({
 
   return (
     <>
-      <group position={[0, 4.5, 0]}>
+      <group position={[positionX, 4.5, 0]}>
         <RigidBody ref={fixed} {...segmentProps} type="fixed" />
         <RigidBody position={[0.5, 0, 0]} ref={j1} {...segmentProps}>
           <BallCollider args={[0.1]} />
@@ -367,3 +405,4 @@ function Band({
 useGLTF.preload(cardGLB);
 useTexture.preload(lanyard);
 useTexture.preload(defaultBackLogo);
+

@@ -17,6 +17,33 @@ export function HeroSection() {
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#F4E071]/30 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-[#D4E6F8]/40 rounded-full blur-3xl pointer-events-none font-sans" />
 
+        {/* Full-bleed Screen-Width 3D Lanyards Canvas (Spans 0px to 100vw from Left to Right Edge) */}
+        <div className="absolute -top-44 sm:-top-56 md:-top-64 left-[calc(50%-50vw)] w-[100vw] h-[780px] sm:h-[850px] z-[9999] pointer-events-none">
+          <div className="w-full h-full pointer-events-auto">
+            <LanyardWrapper
+              position={[0, 0, 18]}
+              gravity={[0, -40, 0]}
+              fov={24}
+              cards={[
+                {
+                  positionX: 1.0,
+                  frontImage: "/kushal_b_k.jpg",
+                  backImage: "/debug_thugs_logo.png",
+                  imageFit: "cover",
+                  lanyardWidth: 1.2
+                },
+                {
+                  positionX: 4.8,
+                  frontImage: "/bhuvan_rai.jpg",
+                  backImage: "/debug_thugs_logo.png",
+                  imageFit: "cover",
+                  lanyardWidth: 1.2
+                }
+              ]}
+            />
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Left Column: Hero Copy & Actions */}
@@ -74,35 +101,8 @@ export function HeroSection() {
 
           </div>
 
-          {/* Right Column: Two Interactive 3D Lanyard Cards (Hanging from above Navbar) */}
-          <div className="lg:col-span-5 relative min-h-[500px] lg:min-h-[550px] w-full flex justify-center items-center overflow-visible z-[9999]">
-            
-            <div className="absolute -top-44 sm:-top-56 md:-top-64 left-0 right-0 h-[780px] sm:h-[850px] grid grid-cols-2 gap-2 z-[9999] pointer-events-auto">
-              <div className="w-full h-full relative">
-                <LanyardWrapper
-                  position={[0, 0, 15]}
-                  gravity={[0, -40, 0]}
-                  fov={22}
-                  frontImage="/kushal_b_k.jpg"
-                  backImage="/debug_thugs_logo.png"
-                  imageFit="cover"
-                  lanyardWidth={1.2}
-                />
-              </div>
-              <div className="w-full h-full relative">
-                <LanyardWrapper
-                  position={[0, 0, 15]}
-                  gravity={[0, -40, 0]}
-                  fov={22}
-                  frontImage="/bhuvan_rai.jpg"
-                  backImage="/debug_thugs_logo.png"
-                  imageFit="cover"
-                  lanyardWidth={1.2}
-                />
-              </div>
-            </div>
-
-          </div>
+          {/* Right Column: Spacer for 3D Lanyard Cards */}
+          <div className="lg:col-span-5 relative min-h-[500px] lg:min-h-[550px] w-full" />
 
         </div>
 
