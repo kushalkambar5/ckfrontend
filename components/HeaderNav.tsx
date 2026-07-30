@@ -24,7 +24,7 @@ export function HeaderNav() {
           </div>
           <div className="flex flex-col">
             <span className="font-serif text-2xl font-bold tracking-tight text-[#1C1B18] leading-none">
-              Hippo<span className="italic text-[#8C6B1F]">Health</span>
+              Hippo<span className="text-[#8C6B1F]">Health</span>
             </span>
             <span className="text-[10px] font-sans font-medium tracking-widest text-[#787363] uppercase mt-0.5">
               Precision Clinical AI

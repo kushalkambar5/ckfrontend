@@ -22,7 +22,7 @@ export function HeroSection() {
 
             {/* Editorial Serif Headline (Matches Reference Image Style) */}
             <h1 className="font-serif text-5xl sm:text-6xl lg:text-7xl font-normal text-[#1C1B18] tracking-tight leading-[1.08]">
-              Your <span className="italic font-serif text-[#8C6B1F]">Health</span>,<br />
+              Your <span className="font-serif text-[#8C6B1F]">Health</span>,<br />
               Smarter.
             </h1>
 

@@ -26,7 +26,7 @@ export function DiagnosticSuiteDark() {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#33312B] pb-8">
           <div className="space-y-3">
             <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-white tracking-tight">
-              Our Advanced <span className="italic font-serif text-[#F4E071]">AI Diagnostic</span> Suite
+              Our Advanced <span className="font-serif text-[#F4E071]">AI Diagnostic</span> Suite
             </h2>
             <p className="text-sm sm:text-base text-[#AAA595] font-sans max-w-xl">
               High-precision computer vision, XGBoost risk stratification, and neural network classification models engineered for clinical decision support.

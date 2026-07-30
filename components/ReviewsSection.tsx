@@ -56,7 +56,7 @@ export function ReviewsSection() {
               PATIENT & CLINICIAN FEEDBACK
             </span>
             <h2 className="font-serif text-5xl sm:text-6xl font-normal text-[#1C1B18] tracking-tight">
-              1800+ <span className="italic font-serif text-[#8C6B1F]">Reviews</span>
+              1800+ <span className="font-serif text-[#8C6B1F]">Reviews</span>
             </h2>
             <p className="text-sm sm:text-base text-[#595446] font-sans max-w-md">
               Real experiences from patients and physicians using Hippo Health for precision AI care.

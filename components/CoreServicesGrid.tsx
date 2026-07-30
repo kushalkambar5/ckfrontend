@@ -66,7 +66,7 @@ export function CoreServicesGrid() {
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-14">
         
         <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1B18] tracking-tight">
-          Our core <span className="italic font-serif text-[#8C6B1F]">medical</span> services
+          Our core <span className="font-serif text-[#8C6B1F]">medical</span> services
         </h2>
         <p className="text-base text-[#615C4F] font-sans">
           Four foundational pillars engineered to unite artificial intelligence with physician oversight and patient biometrics.

@@ -73,7 +73,7 @@ export function DoctorPortalPreview() {
       {/* Section Title */}
       <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
         <h2 className="font-serif text-4xl sm:text-5xl font-normal text-[#1C1B18] tracking-tight">
-          Empowering Doctors with <span className="italic font-serif text-[#8C6B1F]">AI Copilots</span>
+          Empowering Doctors with <span className="font-serif text-[#8C6B1F]">AI Copilots</span>
         </h2>
         <p className="text-base text-[#595446] font-sans">
           A seamless portal where clinicians review connected patients, discuss cases directly with AI engines, edit recommendations, and approve final care plans.
@@ -123,7 +123,7 @@ export function DoctorPortalPreview() {
                   <div className="text-[11px] opacity-80 mt-1">
                     {patient.age} y/o {patient.gender} • {patient.id}
                   </div>
-                  <div className="text-[10px] opacity-90 mt-1 font-serif italic">
+                  <div className="text-[10px] opacity-90 mt-1 font-serif">
                     {patient.condition}
                   </div>
                 </div>

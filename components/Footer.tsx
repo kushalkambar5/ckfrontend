@@ -26,7 +26,7 @@ export function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-2xl font-bold tracking-tight text-white leading-none">
-                  Hippo<span className="italic text-[#F4E071]">Health</span>
+                  Hippo<span className="text-[#F4E071]">Health</span>
                 </span>
                 <span className="text-[10px] font-sans font-medium tracking-widest text-[#AAA595] uppercase mt-0.5">
                   Precision Clinical AI

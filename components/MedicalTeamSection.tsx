@@ -67,7 +67,7 @@ export function MedicalTeamSection() {
             MEET OUR DOCTORS
           </span>
           <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1B18] tracking-tight">
-            Discover Our Team of <span className="italic font-serif text-[#8C6B1F]">Health Experts</span>
+            Discover Our Team of <span className="font-serif text-[#8C6B1F]">Health Experts</span>
           </h2>
           <p className="text-sm sm:text-base text-[#595446] font-sans max-w-lg">
             Board-certified physicians, radiologists, and oncologists validating every AI engine for patient safety.

@@ -1,9 +1,10 @@
+@import url('https://fonts.cdnfonts.com/css/google-sans');
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 @import "tailwindcss";
 
 @theme inline {
-  --font-serif: var(--font-serif-custom), "Playfair Display", Georgia, serif;
-  --font-sans: var(--font-sans-custom), system-ui, sans-serif;
+  --font-serif: 'Google Sans', 'Product Sans', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Google Sans', 'Product Sans', system-ui, -apple-system, sans-serif;
   
   --color-hippo-yellow: #FAF6E8;
   --color-hippo-yellow-accent: #F4E071;
