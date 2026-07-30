@@ -20,6 +20,7 @@ interface ScrollFloatProps {
   scrollStart?: string;
   scrollEnd?: string;
   stagger?: number;
+  scrub?: boolean | number;
   as?: React.ElementType;
 }
 
@@ -30,9 +31,10 @@ export default function ScrollFloat({
   textClassName = '',
   animationDuration = 1,
   ease = 'back.inOut(2)',
-  scrollStart = 'center bottom+=50%',
-  scrollEnd = 'bottom bottom-=40%',
+  scrollStart = 'top 90%',
+  scrollEnd = 'top 40%',
   stagger = 0.03,
+  scrub = 0.8,
   as = 'h2',
 }: ScrollFloatProps) {
   const Component = as as any;
@@ -44,11 +46,27 @@ export default function ScrollFloat({
     const renderSplit = (node: React.ReactNode): React.ReactNode => {
       if (typeof node === 'string' || typeof node === 'number') {
         const text = String(node);
-        return text.split('').map((char) => {
-          const key = charIndex++;
+        const words = text.split(' ');
+        return words.map((word, wIdx) => {
           return (
-            <span className="char" key={key}>
-              {char === ' ' ? '\u00A0' : char}
+            <span
+              key={wIdx}
+              className="word"
+              style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
+            >
+              {word.split('').map((char) => {
+                const key = charIndex++;
+                return (
+                  <span className="char" key={key} style={{ display: 'inline-block' }}>
+                    {char}
+                  </span>
+                );
+              })}
+              {wIdx < words.length - 1 && (
+                <span className="char" key={charIndex++} style={{ display: 'inline-block' }}>
+                  {'\u00A0'}
+                </span>
+              )}
             </span>
           );
         });
@@ -110,13 +128,32 @@ export default function ScrollFloat({
             scroller,
             start: scrollStart,
             end: scrollEnd,
-            scrub: true,
+            scrub: scrub,
+            invalidateOnRefresh: true,
           },
         }
       );
     }, el);
 
-    return () => ctx.revert();
+    const timer1 = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 100);
+
+    const timer2 = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 500);
+
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      window.removeEventListener('resize', handleResize);
+      ctx.revert();
+    };
   }, [
     scrollContainerRef,
     animationDuration,
@@ -124,6 +161,7 @@ export default function ScrollFloat({
     scrollStart,
     scrollEnd,
     stagger,
+    scrub,
   ]);
 
   return (
@@ -132,3 +170,4 @@ export default function ScrollFloat({
     </Component>
   );
 }
+

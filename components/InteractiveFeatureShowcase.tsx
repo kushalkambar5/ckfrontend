@@ -4,6 +4,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "motion/react";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
 
+import ScrollFloat from "@/components/ui/ScrollFloat";
+
 export function InteractiveFeatureShowcase() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -164,9 +166,15 @@ export function InteractiveFeatureShowcase() {
         {/* Header and Step Controls */}
         <div className="w-full max-w-7xl mx-auto space-y-3 shrink-0 pt-2">
           <div className="text-center space-y-1">
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1C1B18] tracking-tight">
+            <ScrollFloat
+              as="h2"
+              animationDuration={1}
+              ease="back.inOut(2)"
+              stagger={0.03}
+              containerClassName="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-[#1C1B18] tracking-tight"
+            >
               Experience Hippo Health <span className="text-[#8C6B1F]">Live</span>
-            </h2>
+            </ScrollFloat>
             <p className="text-xs sm:text-sm text-[#595446] font-sans max-w-xl mx-auto">
               Scroll down to explore interactive AI medical chatbots, doctor verification, smartwatch sync, and 3D organ modeling in horizontal motion.
             </p>

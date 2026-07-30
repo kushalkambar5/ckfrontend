@@ -1,5 +1,6 @@
 .scroll-float {
   overflow: hidden;
+  padding-bottom: 0.05em;
 }
 
 .scroll-float-text {
@@ -8,6 +9,13 @@
   line-height: 1.2;
 }
 
+.word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .char {
   display: inline-block;
+  will-change: transform, opacity;
 }
+

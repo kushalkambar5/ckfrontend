@@ -55,8 +55,6 @@ export function HeroSection() {
               as="h1"
               animationDuration={1}
               ease="back.inOut(2)"
-              scrollStart="center bottom+=50%"
-              scrollEnd="bottom bottom-=40%"
               stagger={0.03}
               containerClassName="font-serif text-4xl sm:text-5xl lg:text-6xl font-normal text-[#1C1B18] tracking-tight leading-[1.08]"
             >
@@ -88,7 +86,7 @@ export function HeroSection() {
                 proximity={300}
                 className="px-7 py-4 text-xs font-bold tracking-wider uppercase shadow-md group font-sans"
               >
-                <span>Book Consultation</span>
+                <span>Get Started</span>
                 <span className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-1 transition-transform">
                   <MaterialIcon name="arrow_forward" className="text-sm text-white" />
                 </span>

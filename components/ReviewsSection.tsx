@@ -60,8 +60,6 @@ export function ReviewsSection() {
               as="h2"
               animationDuration={1}
               ease="back.inOut(2)"
-              scrollStart="center bottom+=50%"
-              scrollEnd="bottom bottom-=40%"
               stagger={0.03}
               containerClassName="font-serif text-5xl sm:text-6xl font-normal text-[#1C1B18] tracking-tight"
             >

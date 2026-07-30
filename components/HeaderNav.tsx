@@ -99,7 +99,7 @@ export function HeaderNav() {
             proximity={250}
             className="px-5 py-2.5 text-xs font-semibold tracking-wide uppercase group font-sans"
           >
-            <span>LAUNCH PLATFORM</span>
+            <span>Get Started</span>
             <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
               <MaterialIcon name="arrow_outward" className="text-sm text-white" />
             </span>
