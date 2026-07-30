@@ -33,8 +33,9 @@ export default function ScrollFloat({
   scrollStart = 'center bottom+=50%',
   scrollEnd = 'bottom bottom-=40%',
   stagger = 0.03,
-  as: Component = 'h2',
+  as = 'h2',
 }: ScrollFloatProps) {
+  const Component = as as any;
   const containerRef = useRef<HTMLHeadingElement>(null);
 
   const splitText = useMemo(() => {

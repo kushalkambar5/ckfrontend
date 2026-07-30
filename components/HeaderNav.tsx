@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { MaterialIcon } from "@/components/ui/MaterialIcon";
+import SpecularButton from "@/components/SpecularButton";
 
 export function HeaderNav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -80,15 +81,29 @@ export function HeaderNav() {
           >
             <MaterialIcon name="person" className="text-xl" />
           </button>
-          <a
+          <SpecularButton
             href="#interactive-showcase"
-            className="inline-flex items-center gap-2 bg-[#1C1B18] text-white px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide hover:bg-[#33312B] transition-all shadow-sm group"
+            size="custom"
+            radius={9999}
+            tint="#1C1B18"
+            tintOpacity={1}
+            textColor="#ffffff"
+            lineColor="#ffffff"
+            baseColor="#525252"
+            intensity={1.2}
+            shineSize={12}
+            shineFade={35}
+            thickness={1.5}
+            speed={0.4}
+            followMouse={true}
+            proximity={250}
+            className="px-5 py-2.5 text-xs font-semibold tracking-wide uppercase group font-sans"
           >
             <span>LAUNCH PLATFORM</span>
             <span className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
               <MaterialIcon name="arrow_outward" className="text-sm text-white" />
             </span>
-          </a>
+          </SpecularButton>
         </div>
 
         {/* Mobile menu button */}
@@ -156,13 +171,27 @@ export function HeaderNav() {
             </Link>
           </nav>
           <div className="pt-4 flex flex-col gap-3">
-            <a
+            <SpecularButton
               href="#interactive-showcase"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full text-center bg-[#1C1B18] text-white py-3 rounded-full text-sm font-semibold tracking-wide"
+              size="custom"
+              radius={9999}
+              tint="#1C1B18"
+              tintOpacity={1}
+              textColor="#ffffff"
+              lineColor="#ffffff"
+              baseColor="#525252"
+              intensity={1.2}
+              shineSize={12}
+              shineFade={35}
+              thickness={1.5}
+              speed={0.4}
+              followMouse={true}
+              proximity={250}
+              className="w-full text-center justify-center py-3 text-sm font-semibold tracking-wide font-sans"
             >
               LAUNCH PLATFORM →
-            </a>
+            </SpecularButton>
           </div>
         </div>
       )}
