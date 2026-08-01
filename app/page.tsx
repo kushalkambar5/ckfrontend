@@ -7,9 +7,6 @@ import { CoreServicesGrid } from "@/components/CoreServicesGrid";
 import Strands from "@/components/Strands";
 import { InteractiveFeatureShowcase } from "@/components/InteractiveFeatureShowcase";
 import { DiagnosticSuiteDark } from "@/components/DiagnosticSuiteDark";
-import { DoctorPortalPreview } from "@/components/DoctorPortalPreview";
-import { MedicalTeamSection } from "@/components/MedicalTeamSection";
-import { ReviewsSection } from "@/components/ReviewsSection";
 import { Footer } from "@/components/Footer";
 
 export default function Home() {
@@ -60,15 +57,6 @@ export default function Home() {
 
         {/* Dark Graphite Diagnostic AI Suite Section */}
         <DiagnosticSuiteDark />
-
-        {/* Clinical Doctor Portal & Patient Management Showcase */}
-        <DoctorPortalPreview />
-
-        {/* "Discover Our Team of Health Experts" Section */}
-        <MedicalTeamSection />
-
-        {/* "1800+ Reviews" Testimonial Section */}
-        <ReviewsSection />
       </main>
 
       {/* Comprehensive Footer */}
