@@ -8,9 +8,9 @@ import SpecularButton from "@/components/SpecularButton";
 
 export function HeroSection() {
   return (
-    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-6 relative z-[999]">
+    <section className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-6 relative z-10">
       {/* Main Soft Yellow Container Card */}
-      <div className="relative w-full bg-[#FAF6E8] rounded-[36px] p-6 sm:p-8 lg:p-12 overflow-hidden shadow-xs z-[999]">
+      <div className="relative w-full bg-[#FAF6E8] rounded-[36px] p-6 sm:p-8 lg:p-12 overflow-hidden shadow-xs">
         
         {/* Background Subtle Gradient Blobs */}
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-[#F4E071]/30 rounded-full blur-3xl pointer-events-none" />

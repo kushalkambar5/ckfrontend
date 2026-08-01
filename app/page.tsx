@@ -2,7 +2,6 @@ import React from "react";
 import { HeaderNav } from "@/components/HeaderNav";
 import { HeroSection } from "@/components/HeroSection";
 import { MarqueeTicker } from "@/components/MarqueeTicker";
-import { StatsSection } from "@/components/StatsSection";
 import { CoreServicesGrid } from "@/components/CoreServicesGrid";
 import Strands from "@/components/Strands";
 import { InteractiveFeatureShowcase } from "@/components/InteractiveFeatureShowcase";
@@ -22,9 +21,6 @@ export default function Home() {
 
         {/* Marquee Feature Highlights Ticker */}
         <MarqueeTicker />
-
-        {/* 4-Column Key Metrics Section */}
-        <StatsSection />
 
         {/* 4 Pastel Core Medical Services Cards */}
         <CoreServicesGrid />
